@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class App extends React.Component{
+            constructor(props){
+                super(props)
+
+                this.state={
+                    nome:"Joao",
+                    nome1:"Pedro",
+                    nome2:"Antonio"
+
+                   
+                }
+
+                this.cmd_click = this.cmd_click.bind(this)
+                this.cmd_click1 = this.cmd_click1.bind(this)
+                this.cmd_click2 = this.cmd_click2.bind(this)
+            }
+
+            /////////////////////---------EVENTO CLICK START-----------\\\\\\\\\\\\\\\\\
+
+            cmd_click(){
+                    this.setState({nome: "Joaquim"})
+                    console.log("Olá!")
+                }
+
+            cmd_click1(){
+                    this.setState({nome1: "Ricardo"})
+                    console.log("Tudo")
+                }
+
+            cmd_click2(){
+                    this.setState({nome2: "Andre"})
+                    console.log("Bem?!")
+                }
+
+
+            /////////////////////---------EVENTO CLICK END-------------\\\\\\\\\\\\\\\\\
+        
+
+            render(){
+                    return(
+                        <div>
+                            <p>Nome: {this.state.nome}</p>
+                            <button onClick={this.cmd_click}>Clique Aqui</button>
+                            <p>Nome: {this.state.nome1}</p>
+                            <button onclick={this.cmd_click1}>Clique Aqui</button>
+                            <p>Nome: {this.state.nome2}</p>
+                            <button onClick={this.cmd_click2}>Clique Aqui</button>
+                            
+                        </div>
+                    )
+                }
+        }
+        
+        ReactDOM.render(
+                <App />,
+                document.getElementById('root')
+        )
+    </script>
+    
+</body>
+</html>
